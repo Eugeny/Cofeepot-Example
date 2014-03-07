@@ -1,0 +1,20 @@
+<vc>
+    <body>
+        <pad id="pot-root">
+            <bind:collection bind="additions">
+                <vc bind="__items">
+                    <label style="bold" text="Available additions:" />
+                </vc>
+                <bind:template>
+                    <checkbox bind:value="selected" bind:text="name" />
+                </bind:template>
+            </bind:collection>
+        </pad>
+    </body>
+
+    <hc>
+        <button id="brew" icon="arrow-right" text="Brew" />
+        <button id="retrieve" icon="coffee" text="Retrieve" />
+        <button id="refresh" icon="refresh" text="Refresh" />
+    </hc>
+</vc>

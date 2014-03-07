@@ -1,0 +1,5 @@
+<bind:dict id="bind">
+    <formline text="Coffeepot URL">
+        <textbox bind="url" />
+    </formline>
+</bind:dict>
