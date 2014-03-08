@@ -31,6 +31,7 @@ class CoffeePlugin (SectionPlugin):
         except Exception, e:
             self.context.notify('error', 'Could not access the coffee pot: %s!' % str(e))
             self.context.launch('configure-plugin', plugin=self.pot) # Ask Configurator to configure the client
+            return
         
         if not self.pot.additions:
             # Refresh addition list if we didn't refresh it before
