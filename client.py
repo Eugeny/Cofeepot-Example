@@ -6,11 +6,14 @@ from ajenti.plugins.configurator.api import ClassConfigEditor
 
 @plugin
 class HTCPCPClientConfigEditor (ClassConfigEditor):
+    """
+    A plugin that handles editing of HTCPCPClient's classconfig
+    """
     title = 'HTCPCP Client'
     icon = 'coffee'
 
     def init(self):
-        self.append(self.ui.inflate('htcpcp:config'))
+        self.append(self.ui.inflate('htcpcp:config'))  # htcpcp/layout/config.xml
 
 
 class CoffeeAddition (object):
@@ -21,7 +24,7 @@ class CoffeeAddition (object):
 
 @plugin
 class HTCPCPClient (BasePlugin):
-    classconfig_editor = HTCPCPClientConfigEditor
+    classconfig_editor = HTCPCPClientConfigEditor  # connect this plugin with a ConfigEditor
     default_classconfig = {'url': 'htcpcp://127.0.0.1:5000'}
 
     def init(self):
@@ -40,6 +43,9 @@ class HTCPCPClient (BasePlugin):
         return self.classconfig['url'].replace('htcpcp', 'http')
 
     def brew(self):
+        """
+        Brew coffee with selected additions
+        """
         return requests.request('BREW', self.get_url(), headers={
             'Accept-Additions': ';'.join(x.name for x in self.additions if x.selected)
         })

@@ -1,4 +1,4 @@
-<bind:dict id="bind">
+<bind:dict id="bind"> <!-- Configurator plugin will bind this to the class' .classconfig -->
     <formline text="Coffeepot URL">
         <textbox bind="url" />
     </formline>

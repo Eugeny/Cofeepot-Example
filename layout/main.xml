@@ -1,11 +1,11 @@
 <vc>
     <body>
         <pad id="pot-root">
-            <bind:collection bind="additions">
-                <vc bind="__items">
+            <bind:collection bind="additions"> <!-- bind a repetitive collection of CoffeeAdditions -->
+                <vc bind="__items"> <!-- elements will be placed inside this <vc> -->
                     <label style="bold" text="Available additions:" />
                 </vc>
-                <bind:template>
+                <bind:template> <!-- an element template -->
                     <checkbox bind:value="selected" bind:text="name" />
                 </bind:template>
             </bind:collection>
